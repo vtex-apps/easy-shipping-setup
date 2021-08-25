@@ -1,0 +1,17 @@
+query getShippingRate($carrierId: String!, $zipCode: String!) {
+  listShippingRate(carrierId: $carrierId, zipCode: $zipCode) {
+    zipCodeStart
+    zipCodeEnd
+    weightStart
+    weightEnd
+    absoluteMoneyCost
+    pricePercent
+    pricePercentByWeight
+    maxVolume
+    timeCost
+    country
+    operationType
+    polygon
+    minimumValueInsurance
+  }
+}

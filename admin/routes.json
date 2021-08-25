@@ -1,0 +1,6 @@
+{
+  "admin.app.delivery-settings": {
+    "component": "DeliverySettings",
+    "path": "/admin/app/delivery-settings"
+  }
+}

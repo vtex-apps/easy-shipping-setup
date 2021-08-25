@@ -1,0 +1,52 @@
+type Query {
+  listAllShippingPolicies: ShippingPolicyResponse
+  listAllWarehouses: [WarehouseResponse]
+  listAllDocks: [DockResponse]
+  listShippingRate(carrierId: String, zipCode: String): [ShippingRate]
+  listPromotionById(promotionId: String): Promotion
+  listAllPromotions: PromotionResponse
+}
+
+type Mutation {
+  updateOnboarding(shippingCharge: Int, freeDeliveryThreshold: String): String
+  updateShippingPolicy(input: ShippingPolicyInput!): ShippingPolicy
+  updateShippingRate(carrierId: String, searchZipCode: String, input: [ShippingRateInput]): ShippingRate
+  createDock: Boolean
+  createWarehouse: Boolean
+  createOrUpdatePromotion(
+    newTotalValueFloor: Int, 
+    promotionId: String, 
+    beginDateUtc: String, 
+    endDateUtc: String, 
+    isActive: Boolean
+  ): Promotion
+}
+
+input ShippingPolicyInput {
+  id: String
+  name: String
+  shippingMethod: String
+  isHolidayActive: Boolean
+  isSaturdayActive: Boolean
+  isSundayActive: Boolean
+  largestMeasure: Float
+  maxMeasureSum: Float
+  isActive: Boolean
+}
+
+input ShippingRateInput {
+  zipCodeStart: String
+  zipCodeEnd: String
+  weightStart: Int
+  weightEnd: Int
+  absoluteMoneyCost: String
+  pricePercent: Int
+  pricePercentByWeight: Int
+  maxVolume: Int
+  timeCost: String
+  timeCostToDisplay: String
+  country: String
+  operationType: Int
+  polygon: String
+  minimumValueInsurance: Int
+}

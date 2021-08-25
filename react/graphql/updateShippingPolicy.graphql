@@ -1,0 +1,39 @@
+mutation updateShippingPolicy(
+  $id: String!
+  $name: String
+  $shippingMethod: String
+  $isHolidayActive: Boolean
+  $isSaturdayActive: Boolean
+  $isSundayActive: Boolean
+  $largestMeasure: Float
+  $maxMeasureSum: Float
+  $isActive: Boolean
+) {
+  updateShippingPolicy(
+    input: {
+      id: $id
+      name: $name
+      shippingMethod: $shippingMethod
+      isHolidayActive: $isHolidayActive
+      isSaturdayActive: $isSaturdayActive
+      isSundayActive: $isSundayActive
+      largestMeasure: $largestMeasure
+      maxMeasureSum: $maxMeasureSum
+      isActive: $isActive
+    }
+  ) {
+    id,
+    name,
+    shippingMethod,
+    weekendAndHolidays {
+      saturday,
+      sunday,
+      holiday
+    },
+    maxDimension {
+      largestMeasure,
+      maxMeasureSum
+    },
+    isActive
+  }
+}

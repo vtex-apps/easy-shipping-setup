@@ -1,0 +1,23 @@
+type ShippingPolicyResponse {
+  items: [ShippingPolicy]
+}
+
+type ShippingPolicy {
+  id: String
+  name: String
+  shippingMethod: String
+  weekendAndHolidays: WeekendAndHolidaysSettings
+  maxDimension: MaxDimensionSettings
+  isActive: Boolean
+}
+
+type WeekendAndHolidaysSettings {
+  saturday: Boolean
+  sunday: Boolean
+  holiday: Boolean
+}
+
+type MaxDimensionSettings {
+  largestMeasure: Float
+  maxMeasureSum: Float
+}

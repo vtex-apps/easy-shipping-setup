@@ -1,0 +1,127 @@
+type PromotionResponse {
+  limitConfiguration: LimitConfiguration
+  limitConfigurationMaxPrice: LimitConfigurationMaxPrice
+  items: [PromotionItem]
+  disabledItems: [String]
+  archivedItems: [String]
+}
+
+type LimitConfigurationMaxPrice {
+  activesCount: Int
+  limit: Int
+}
+
+type LimitConfiguration {
+  activesCount: Int
+  limit: Int
+}
+
+type PromotionItem {
+  idCalculatorConfiguration: String
+  name: String
+  isActive: Boolean
+}
+
+type Promotion {
+  idCalculatorConfiguration: String
+  name: String
+  description: String
+  beginDateUtc: String
+  endDateUtc: String
+  lastModified: String
+  daysAgoOfPurchases: Int
+  isActive: Boolean
+  isArchived: Boolean
+  isFeatured: Boolean
+  activeDaysOfWeek: [String]
+  offset: Int
+  activateGiftsMultiplier: Boolean
+  newOffset: Float
+  cumulative: Boolean
+  nominalShippingDiscountValue: Float
+  absoluteShippingDiscountValue: Float
+  nominalDiscountValue: Float
+  maximumUnitPriceDiscount: Float
+  percentualDiscountValue: Float
+  rebatePercentualDiscountValue: Float
+  percentualShippingDiscountValue: Float
+  percentualTax: Float
+  shippingPercentualTax: Float
+  percentualDiscountValueList1: Float
+  percentualDiscountValueList2: Float
+  skusGift: SkuGift
+  nominalRewardValue: Float
+  percentualRewardValue: Float
+  orderStatusRewardValue: String
+  maxNumberOfAffectedItems: Int
+  maxNumberOfAffectedItemsGroupKey: String
+  applyToAllShippings: Boolean
+  nominalTax: Float
+  origin: String
+  idSellerIsInclusive: Boolean
+  idsSalesChannel: [String]
+  areSalesChannelIdsExclusive: Boolean
+  marketingTags: [String]
+  marketingTagsAreNotInclusive: Boolean
+  paymentsMethods: [String]
+  campaigns: [String]
+  categories: [String]
+  categoriesAreInclusive: Boolean
+  brands: [String]
+  brandsAreInclusive: Boolean
+  products: [String]
+  productsAreInclusive: Boolean
+  skus: [String]
+  skusAreInclusive: Boolean
+  collections1BuyTogether: [String]
+  minimumQuantityBuyTogether: Int
+  quantityToAffectBuyTogether: Int
+  enableBuyTogetherPerSku: Boolean
+  listSku1BuyTogether: [String]
+  listSku2BuyTogether: [String]
+  totalValueFloor: Float
+  totalValueCeling: Float
+  totalValueMode: String
+  collections: [String]
+  collectionsIsInclusive: Boolean
+  restrictionsBins: [String]
+  totalValuePurchase: Float
+  slasIds: [String]
+  isSlaSelected: Boolean
+  isFirstBuy: Boolean
+  firstBuyIsProfileOptimistic: Boolean
+  compareListPriceAndPrice: Boolean
+  isDifferentListPriceAndPrice: Boolean
+  zipCodeRanges: [String]
+  itemMaxPrice: Float
+  itemMinPrice: Float
+  isMinMaxInstallments: Boolean
+  minInstallment: Int
+  maxInstallment: Int
+  clusterExpressions: [String]
+  clusterOperator: String
+  giftListTypes: [String]
+  affiliates: [String]
+  maxUsage: Int
+  maxUsagePerClient: Int
+  multipleUsePerClient: Boolean
+  type: String
+  useNewProgressiveAlgorithm: Boolean
+}
+
+type SkuGift {
+  quantitySelectable: Int
+  gifts: [Gift]
+}
+
+type Gift {
+  id: String
+  name: String
+  quantity: Int
+  sellers: [Seller]
+}
+
+type Seller {
+  id: String
+  name: String
+}

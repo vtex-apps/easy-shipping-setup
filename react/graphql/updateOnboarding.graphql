@@ -1,0 +1,9 @@
+mutation updateOnboarding(
+  $shippingCharge: Int,
+  $freeDeliveryThreshold: String
+) {
+  updateOnboarding(
+    shippingCharge:$shippingCharge,
+    freeDeliveryThreshold:$freeDeliveryThreshold
+  ) 
+}

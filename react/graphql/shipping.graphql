@@ -1,0 +1,19 @@
+query getAllShippingPolicies {
+  listAllShippingPolicies {
+    items {
+      id,
+      name,
+      shippingMethod,
+      weekendAndHolidays {
+        saturday,
+        sunday,
+        holiday
+      },
+      maxDimension {
+        largestMeasure,
+        maxMeasureSum
+      },
+      isActive
+    }
+  }
+}

@@ -1,0 +1,10 @@
+type WarehouseResponse {
+  id: String
+  name: String
+  warehouseDocks: [Dock]
+  isActive: Boolean
+}
+
+type Dock {
+  dockId: String
+}

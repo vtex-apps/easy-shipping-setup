@@ -1,0 +1,52 @@
+{
+  "vendor": "vtex",
+  "name": "easy-shipping-setup",
+  "version": "0.0.1",
+  "title": "Easy Shipping Setup",
+  "description": "Display the shipping settings to sellers and allow certain data manipulation",
+  "builders": {
+    "react": "3.x",
+    "admin": "0.x",
+    "messages": "1.x",
+    "node": "6.x",
+    "docs": "0.x",
+    "graphql": "1.x"
+  },
+  "dependencies": {
+    "vtex.styleguide": "9.x"
+  },
+  "registries": [
+    "smartcheckout"
+  ],
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{account}}.vtexcommercestable.com.br",
+        "path": "/api/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "logistics.vtexcommercestable.com.br",
+        "path": "/api/logistics/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "app.io.vtex.com",
+        "path": "*"
+      }
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

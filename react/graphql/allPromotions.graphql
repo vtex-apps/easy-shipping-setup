@@ -1,0 +1,19 @@
+query getAllPromotions {
+  listAllPromotions {
+    limitConfiguration {
+      activesCount,
+      limit
+    },
+    limitConfigurationMaxPrice {
+      activesCount
+      limit
+    }
+    disabledItems,
+    archivedItems, 
+    items {
+      idCalculatorConfiguration,
+      name,
+      isActive
+    }
+  }
+}

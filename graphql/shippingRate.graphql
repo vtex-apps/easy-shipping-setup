@@ -1,0 +1,15 @@
+type ShippingRate {
+  zipCodeStart: String
+  zipCodeEnd: String
+  weightStart: Int
+  weightEnd: Int
+  absoluteMoneyCost: String
+  pricePercent: Int
+  pricePercentByWeight: Int
+  maxVolume: Int
+  timeCost: String
+  country: String
+  operationType: Int
+  polygon: String
+  minimumValueInsurance: Int
+}

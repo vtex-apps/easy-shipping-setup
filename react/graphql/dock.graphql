@@ -1,0 +1,7 @@
+query getAllDocks {
+  listAllDocks {
+    id,
+    name,
+    isActive
+  }
+}

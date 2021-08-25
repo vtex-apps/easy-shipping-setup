@@ -1,0 +1,14 @@
+{
+  "projectName": "shipping-strategy",
+  "projectOwner": "vtex",
+  "repoType": "github",
+  "repoHost": "https://github.com/iviteb/shipping-strategy",
+  "files": [
+    "docs/README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [],
+  "contributorsPerLine": 7
+}

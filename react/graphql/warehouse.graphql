@@ -1,0 +1,10 @@
+query getAllWarehouses {
+  listAllWarehouses {
+    id,
+    name,
+    warehouseDocks {
+      dockId
+    },
+    isActive
+  }
+}

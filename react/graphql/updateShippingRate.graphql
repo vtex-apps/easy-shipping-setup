@@ -1,0 +1,25 @@
+mutation updateShippingRate(
+  $carrierId: String
+  $searchZipCode: String
+  $input: [ShippingRateInput]
+) {
+  updateShippingRate(
+    carrierId: $carrierId,
+    searchZipCode: $searchZipCode,
+    input: $input
+  ) {
+    zipCodeStart
+    zipCodeEnd
+    weightStart
+    weightEnd
+    absoluteMoneyCost
+    pricePercent
+    pricePercentByWeight
+    maxVolume
+    timeCost
+    country
+    operationType
+    polygon
+    minimumValueInsurance
+  }
+}
