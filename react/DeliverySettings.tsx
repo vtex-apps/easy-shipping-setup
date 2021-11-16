@@ -247,6 +247,7 @@ const DeliverySettings: FC = () => {
 
   const handleSubmit = async (showToast: any) => {
 
+    setIsLoading(true);
     if (freeDeliveryThreshold !== 0) {
       handlePromotionSubmit()
     }
@@ -265,6 +266,7 @@ const DeliverySettings: FC = () => {
     await updateShippingPolicy({variables: {
       ...shippingPolicy
     }}).catch(err => {
+      setIsLoading(false);
       console.error(err)
       showToast({
         message: intl.formatMessage({
@@ -274,6 +276,7 @@ const DeliverySettings: FC = () => {
       })
     })
     .then(() => {
+      setIsLoading(false);
       showToast({
         message: intl.formatMessage({
           id: 'admin/shipping-policy.toast.success',
