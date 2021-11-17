@@ -246,7 +246,6 @@ const DeliverySettings: FC = () => {
   }
 
   const handleSubmit = async (showToast: any) => {
-
     setIsLoading(true);
     if (freeDeliveryThreshold !== 0) {
       handlePromotionSubmit()
@@ -254,13 +253,17 @@ const DeliverySettings: FC = () => {
 
     await updateShippingRate({variables: {
       ...shippingRate
-    }})
+    }}).catch(err=>{
+      console.error(err)
+    })
 
     await updateOnboarding({
       variables: {
         shippingCharge: parseFloat(shippingRate.input[0].absoluteMoneyCost),
         freeDeliveryThreshold: freeDeliveryThreshold !== 0 && isActive ? freeDeliveryThreshold.toString() : ""
       }
+    }).catch(err=>{
+      console.error(err)
     })
 
     await updateShippingPolicy({variables: {
