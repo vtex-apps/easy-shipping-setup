@@ -246,41 +246,50 @@ const DeliverySettings: FC = () => {
   }
 
   const handleSubmit = async (showToast: any) => {
-
-    if (freeDeliveryThreshold !== 0) {
-      handlePromotionSubmit()
-    }
-
-    await updateShippingRate({variables: {
-      ...shippingRate
-    }})
-
-    await updateOnboarding({
-      variables: {
-        shippingCharge: parseFloat(shippingRate.input[0].absoluteMoneyCost),
-        freeDeliveryThreshold: freeDeliveryThreshold !== 0 && isActive ? freeDeliveryThreshold.toString() : ""
+    try {
+      setIsLoading(true);
+      if (freeDeliveryThreshold !== 0) {
+        handlePromotionSubmit()
       }
-    })
 
-    await updateShippingPolicy({variables: {
-      ...shippingPolicy
-    }}).catch(err => {
-      console.error(err)
-      showToast({
-        message: intl.formatMessage({
-          id: 'admin/shipping-policy.toast.failure',
-        }),
-        duration: 5000,
+      await updateShippingRate({
+        variables: {
+          ...shippingRate
+        }
       })
-    })
-    .then(() => {
+
+      await updateOnboarding({
+        variables: {
+          shippingCharge: parseFloat(shippingRate.input[0].absoluteMoneyCost),
+          freeDeliveryThreshold: freeDeliveryThreshold !== 0 && isActive ? freeDeliveryThreshold.toString() : ""
+        }
+      })
+      await updateShippingPolicy({
+        variables: {
+          ...shippingPolicy
+        }
+      }).catch(err => {
+        setIsLoading(false);
+        console.error(err)
+        showToast({
+          message: intl.formatMessage({
+            id: 'admin/shipping-policy.toast.failure',
+          }),
+          duration: 5000,
+        })
+      })
+    } catch (err) {
+      console.error(err);
+    }
+    finally {
+      setIsLoading(false);
       showToast({
         message: intl.formatMessage({
           id: 'admin/shipping-policy.toast.success',
         }),
         duration: 5000,
       })
-    })
+    }
   }
 
   const handlePromotionSubmit = () => {
