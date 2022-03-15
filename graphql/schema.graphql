@@ -8,7 +8,7 @@ type Query {
 }
 
 type Mutation {
-  updateOnboarding(shippingCharge: Int, freeDeliveryThreshold: String): String
+  updateOnboarding(shippingCharge: Float, freeDeliveryThreshold: String): String
   updateShippingPolicy(input: ShippingPolicyInput!): ShippingPolicy
   updateShippingRate(carrierId: String, searchZipCode: String, input: [ShippingRateInput]): ShippingRate
   createDock: Boolean
