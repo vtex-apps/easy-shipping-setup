@@ -1,5 +1,5 @@
 mutation updateOnboarding(
-  $shippingCharge: Int,
+  $shippingCharge: Float,
   $freeDeliveryThreshold: String
 ) {
   updateOnboarding(
