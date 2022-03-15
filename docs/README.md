@@ -1,4 +1,4 @@
-`ðŸ“¢ Use this project, [contribute](https://github.com/iviteb/shipping-strategy) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).`
+`=â Use this project, [contribute](https://github.com/iviteb/shipping-strategy) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).`
 
 # Easy Shipping Setup
 
@@ -19,14 +19,19 @@ The delivery cost and time, delivery on weekends/holidays, free shipping can be 
 
 For the free shipping type promotion, in order to create one, toggle on the free shipping and enter a minimum threshold (the minimum amount on an order from which the free shipping will be applied). To inactivate it, toggle off the free shipping. 
 
-## Contributors âœ¨
+## Contributors (
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/razvanudream"><img src="https://avatars.githubusercontent.com/u/71461884?v=4" width="100px;" alt=""/><br /><sub><b>Razvan Udrea</b></sub></a><br /><a href="https://github.com/iviteb/shipping-strategy/commits?author=razvanudream" title="Code">ðŸ’»</a></td>
+    <td align="center"><a href="https://github.com/razvanudream"><img src="https://avatars.githubusercontent.com/u/71461884?v=4" width="100px;" alt=""/><br /><sub><b>Razvan Udrea</b></sub></a><br /><a href="https://github.com/iviteb/shipping-strategy/commits?author=razvanudream" title="Code">=»</a></td>
   </tr>
 </table>
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+
+**Upcoming documentation:**
+
+ - [Chnage Int type to Float](https://github.com/vtex-apps/easy-shipping-setup/pull/3)
