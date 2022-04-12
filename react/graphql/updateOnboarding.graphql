@@ -1,9 +1,0 @@
-mutation updateOnboarding(
-  $shippingCharge: Float,
-  $freeDeliveryThreshold: String
-) {
-  updateOnboarding(
-    shippingCharge:$shippingCharge,
-    freeDeliveryThreshold:$freeDeliveryThreshold
-  ) 
-}
