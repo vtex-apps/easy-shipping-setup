@@ -242,7 +242,6 @@ const DeliverySettings: FC = () => {
 
   useEffect(() => {
     if (!promotionData) return
-    console.log('promotion data', promotionData)
 
     setPromotion(promotionData)
     setIsActive(promotionData.listPromotionById.isActive)
@@ -317,7 +316,6 @@ const DeliverySettings: FC = () => {
   }
 
   const handlePromotionSubmit = () => {
-    console.log('freeDel', freeDeliveryThreshold)
     createOrUpdatePromotion({
       variables: {
         newTotalValueFloor: Number(freeDeliveryThreshold),
