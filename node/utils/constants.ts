@@ -1,11 +1,11 @@
 export const CREATE_PROMOTION_OBJECT = {
-  idCalculatorConfiguration: "",
+  idCalculatorConfiguration: '',
   skusGift: {
-    quantitySelectable: 1
+    quantitySelectable: 1,
   },
-  name: "Free delivery",
-  beginDateUtc: "",
-  endDateUtc: "",
+  name: 'Free delivery',
+  beginDateUtc: '',
+  endDateUtc: '',
   daysAgoOfPurchases: 0,
   isActive: true,
   isFeatured: false,
@@ -24,9 +24,9 @@ export const CREATE_PROMOTION_OBJECT = {
   percentualDiscountValueList2: 0,
   nominalRewardValue: 0,
   percentualRewardValue: 0,
-  orderStatusRewardValue: "invoiced",
+  orderStatusRewardValue: 'invoiced',
   maxNumberOfAffectedItems: 0,
-  origin: "Marketplace",
+  origin: 'Fulfillment',
   idSellerIsInclusive: true,
   categoriesAreInclusive: true,
   brandsAreInclusive: true,
@@ -36,7 +36,7 @@ export const CREATE_PROMOTION_OBJECT = {
   enableBuyTogetherPerSku: false,
   totalValueFloor: 0,
   totalValueCeling: 0,
-  totalValueMode: "IncludeMatchedItems",
+  totalValueMode: 'IncludeMatchedItems',
   collectionsIsInclusive: true,
   totalValuePurchase: 0,
   isSlaSelected: false,
@@ -52,63 +52,61 @@ export const CREATE_PROMOTION_OBJECT = {
   maxUsage: 0,
   maxUsagePerClient: 0,
   multipleUsePerClient: false,
-  type: "regular"
+  type: 'regular',
+  applyToAllShippings: true,
+  idsSalesChannel: ['1'],
 }
 
 export const CREATE_DOCK_OBJECT = {
-   pickupStoreInfo: {
-     isPickupStore: false,
-     storeId: null,
-     friendlyName: null,
-     address: null,
-     additionalInfo: null,
-     dockId: null,
-     distance: null,
-     businessHours: null,
-     pickupHolidays: null,
-     sellerId: null,
-     isThirdPartyPickup: false
+  pickupStoreInfo: {
+    isPickupStore: false,
+    storeId: null,
+    friendlyName: null,
+    address: null,
+    additionalInfo: null,
+    dockId: null,
+    distance: null,
+    businessHours: null,
+    pickupHolidays: null,
+    sellerId: null,
+    isThirdPartyPickup: false,
   },
-   storeId: null,
-   pickupInStoreInfo: {
-     isActice: false,
-     additionalInfo: null
+  storeId: null,
+  pickupInStoreInfo: {
+    isActice: false,
+    additionalInfo: null,
   },
-   deliveryFromStoreInfo: {
-     isActice: false,
-     deliveryRadius: 0.0,
-     deliveryFee: 0.0,
-     deliveryTime: "00:00:00",
-     maximumWeight: 0.0
+  deliveryFromStoreInfo: {
+    isActice: false,
+    deliveryRadius: 0.0,
+    deliveryFee: 0.0,
+    deliveryTime: '00:00:00',
+    maximumWeight: 0.0,
   },
-   address: null,
-   location: null,
-   id: "1",
-   name: "Standard",
-   priority: 0,
-   dockTimeFake: "1.00:00:00",
-   timeFakeOverhead: "00:00:00",
-   salesChannels: [
-      "1"
-  ],
-   freightTableIds: [
-      "1"
-  ],
-   wmsEndPoint: "",
-   isActive: true
+  address: null,
+  location: null,
+  id: '1',
+  name: 'Standard',
+  priority: 0,
+  dockTimeFake: '1.00:00:00',
+  timeFakeOverhead: '00:00:00',
+  salesChannels: ['1'],
+  freightTableIds: ['1'],
+  wmsEndPoint: '',
+  isActive: true,
 }
 
 export const CREATE_WAREHOUSE_OBJECT = {
-   id: "1",
-   name: "Standard",
-   warehouseDocks: [
-      {
-           dockId: "1",
-           time: "1.00:00:00",
-           cost: 0.0
-      }
+  id: '1',
+  name: 'Standard',
+  warehouseDocks: [
+    {
+      dockId: '1',
+      time: '1.00:00:00',
+      cost: 0.0,
+    },
   ],
-   pickupPointIds: [],
-   priority: 0,
-   isActive: true
+  pickupPointIds: [],
+  priority: 0,
+  isActive: true,
 }

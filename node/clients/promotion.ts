@@ -2,7 +2,7 @@ import {
   InstanceOptions,
   IOContext,
   JanusClient,
-  RequestConfig
+  RequestConfig,
 } from '@vtex/api'
 import { pipe } from 'ramda'
 import { statusToError } from '../utils'
@@ -12,18 +12,18 @@ const TWO_SECONDS = 2 * 1000
 
 const withCookieAsHeader =
   (context: IOContext) =>
-    (options: InstanceOptions): InstanceOptions => ({
-      ...options,
-      headers: {
-        Accept: 'application/vnd.vtex.pricing.v3+json',
-        'Cache-Control': 'no-cache',
-        'Content-Type': 'application/json',
-        'X-Vtex-Use-Https': 'true',
-        VtexIdclientAutCookie: context.adminUserAuthToken ?? '',
-        ...(options?.headers ?? {}),
-      },
-      timeout: TWO_SECONDS
-    })
+  (options: InstanceOptions): InstanceOptions => ({
+    ...options,
+    headers: {
+      Accept: 'application/vnd.vtex.pricing.v3+json',
+      'Cache-Control': 'no-cache',
+      'Content-Type': 'application/json',
+      'X-Vtex-Use-Https': 'true',
+      VtexIdclientAutCookie: context.adminUserAuthToken ?? '',
+      ...(options?.headers ?? {}),
+    },
+    timeout: TWO_SECONDS,
+  })
 
 export default class Promotions extends JanusClient {
   constructor(context: IOContext, options?: InstanceOptions) {
@@ -53,7 +53,7 @@ export default class Promotions extends JanusClient {
     defaultPromotion.isActive = isActive
 
     if (!promotionId.length) {
-      var date = new Date()
+      const date = new Date()
       defaultPromotion.beginDateUtc = date.toISOString()
 
       date.setFullYear(date.getFullYear() + 3)
@@ -73,9 +73,10 @@ export default class Promotions extends JanusClient {
     const basePVT = '/api/rnb'
 
     return {
-      promotionById: (promotionId: string) => `${basePVT}/pvt/calculatorconfiguration/${promotionId}`,
+      promotionById: (promotionId: string) =>
+        `${basePVT}/pvt/calculatorconfiguration/${promotionId}`,
       allPromotions: `${basePVT}/pvt/benefits/calculatorconfiguration`,
-      createOrUpdatePromotion: `${basePVT}/pvt/calculatorconfiguration`
+      createOrUpdatePromotion: `${basePVT}/pvt/calculatorconfiguration`,
     }
   }
 }
