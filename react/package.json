@@ -1,6 +1,6 @@
 {
   "name": "shipping-strategy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "test": "vtex-test-tools test"
   },

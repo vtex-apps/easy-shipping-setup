@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "easy-shipping-setup",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "Easy Shipping Setup",
   "description": "Display the shipping settings to sellers and allow certain data manipulation",
   "builders": {
